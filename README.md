@@ -1,5 +1,17 @@
 
-# nlp-01-getting-started
+# nlp-01-getting-started-custom
+
+## My Project
+
+Author: Abdellah Boudlal
+Date: 2026-10
+
+This project explores a professional Python workflow for web text analysis.
+It retrieves text from a web page, calculates word frequencies, and creates
+a bar chart and a word cloud.
+
+Based on the example project by Denise Case:
+https://github.com/denisecase/nlp-01-getting-started
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
 [![CI](https://github.com/denisecase/nlp-01-getting-started/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/nlp-01-getting-started/actions/workflows/ci-python-zensical.yml)
