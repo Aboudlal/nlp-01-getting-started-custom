@@ -14,7 +14,7 @@
 
 
 [project]
-name = "nlp"               # CUSTOM: Package distribution name (use lowercase and dashes).
+name = "nlp-01-getting-started-custom"               # CUSTOM: Package distribution name (use lowercase and dashes).
 readme = "README.md"
 requires-python = ">=3.14"
 version = "0.1.0"
@@ -76,7 +76,7 @@ default-groups = "all"
 exclude-newer = "7 days"
 
 # WHY: Some releases must be usable immediately.
-exclude-newer-package = { datafun-toolkit = false, nlp = false }
+exclude-newer-package = { datafun-toolkit = false, nlp = false, certifi = false, pillow = false }
 
 # ============================================================
 # === SECTION: BUILD SYSTEM ===
