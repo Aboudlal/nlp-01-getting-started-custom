@@ -26,9 +26,11 @@ https://github.com/denisecase/nlp-01-getting-started
 
 ## Project Overview
 
-Author: Denise Case
+Original author: Denise Case
 
-Date: 2026 October
+Customized by: Abdellah Boudlal
+
+Date: 2026-10
 
 First project in the Web Mining and Applied NLP course.
 
