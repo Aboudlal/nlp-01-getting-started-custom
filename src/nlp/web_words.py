@@ -149,6 +149,21 @@ words = [word.lower() for word in words]
 clean_words: list[str] = [
     word.strip(".,:;!?()[]\"'") for word in words if len(word) > 3
 ]
+# Filter selected common words before counting frequencies.
+stop_words: set[str] = {
+    "from",
+    "that",
+    "with",
+    "this",
+    "have",
+    "which",
+    "such",
+    "into",
+    "were",
+    "their",
+}
+
+clean_words = [word for word in clean_words if word not in stop_words]
 count_of_clean_words: int = len(clean_words)
 
 print("First 20 cleaned words:")

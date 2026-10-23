@@ -263,3 +263,40 @@ the most frequent terms. This suggests that additional filtering could
 make topic-related vocabulary easier to identify.
 
 The script finished with "Pipeline executed successfully!"
+## D2 — Small Technical Experiment
+
+### Modification and Reason
+
+I will filter out a small set of common English words before calculating
+word frequencies. These words appear frequently but provide little
+information about the article's topic.
+
+### Prediction
+
+I predict that from, that, with, and this will disappear from the results.
+The total number of retained tokens will decrease, while topic-related
+words such as language and processing will keep the same counts,
+provided the downloaded page has not changed.
+### Observed Results
+
+After filtering the selected common words, from, that, with, and this
+no longer appeared in the top 10.
+
+Language (111), natural (69), processing (54), and text (52)
+kept the same counts as the baseline.
+
+Linguistics (32), semantic (29), learning (27), and statistical (27)
+appeared in the top 10. The script completed successfully.
+
+The retained token count decreased from 5,510 to 5,266.
+The filter removed 244 token occurrences, approximately 4.4% of
+the baseline total, while preserving the counts of the retained words.
+
+### What I Learned
+
+Filtering common words made more topic-related vocabulary visible
+without changing the counts of the retained words.
+
+However, e.g and edit remained in the results. A short stop-word list
+does not remove all irrelevant text, and word frequency alone does
+not explain the meaning or context of a word.
