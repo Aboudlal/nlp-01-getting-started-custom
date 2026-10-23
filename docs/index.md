@@ -1,77 +1,117 @@
-# Web Mining and Applied NLP Project Report
+# Airport Web Text Analysis
 
-Web Mining and Applied NLP | Project 01 | Example Report
+Author: Abdellah Boudlal
 
-## Overview
+Date: 2026-10
 
-This project establishes a professional Python environment
-for acquiring and analyzing text from web pages.
+## Question
 
-The objective is to demonstrate that a Python project can
-retrieve web content, extract text, compute word frequencies,
-and produce visualizations using a reproducible workflow.
+Which words occur most frequently in Wikipedia's Airport page
+after basic text cleaning and filtering selected common words?
 
-## Tools and Methods
+## Data
 
-The project uses:
+Source: [Wikipedia — Airport](https://en.wikipedia.org/wiki/Airport)
 
-- Python for text acquisition and analysis.
-- Requests for retrieving HTML from web pages.
-- BeautifulSoup for parsing HTML and extracting text.
-- Polars for computing word frequencies.
-- Matplotlib for frequency visualizations.
-- WordCloud for visual exploration of vocabulary.
-- Logging for execution records.
-- Ruff, ty, and pytest for code verification.
-- Zensical and GitHub Pages for published documentation.
+Accessed: 2026-10-23.
 
-The example script retrieves a Wikipedia article,
-extracts text, cleans words,
-and calculates token frequencies.
+The analysis retrieves the page's HTML and extracts text from the
+whole page, including navigation, headings, and references.
+No local input dataset is required.
 
-The analysis produces a frequency bar chart
-and a word cloud.
+## Process and Tools
 
-## Verification
+I adapted Denise Case's NLP example to a different topic.
 
-A successful execution displays:
+- Requests downloads the HTML.
+- BeautifulSoup and lxml extract the text.
+- Python splits the text, converts it to lowercase, and strips
+  common punctuation from the ends of tokens.
+- The original length filter keeps raw tokens longer than
+  three characters before punctuation is stripped.
+- A set of ten common English words is filtered out.
+- Polars groups the retained tokens and counts their occurrences.
+- Matplotlib and WordCloud produce the visualizations.
 
-    Pipeline executed successfully!
+The selected common words are from, that, with, this, have,
+which, such, into, were, and their.
 
-The script records execution details in a project log.
+## Custom Application
 
-These results demonstrate that the environment can
-retrieve, process, and visualize web text.
+I created a separate script, `src/nlp/airport_words.py`, changed
+the source from the NLP article to the Airport article, and
+updated the chart titles.
 
-Automated tests provide additional verification
-of the project's expected behavior.
+The script also saves both figures in `docs/images`.
+The earlier experiment remains in `src/nlp/web_words.py`.
+
+## Results
+
+The observed run downloaded 579,253 characters of HTML.
+It produced 11,286 raw whitespace-separated tokens and retained
+7,160 tokens after cleaning and filtering.
+
+| Word | Occurrences |
+| --- | ---: |
+| airport | 245 |
+| airports | 124 |
+| aircraft | 80 |
+| international | 56 |
+| edit | 44 |
+| archived | 42 |
+| original | 42 |
+| retrieved | 42 |
+| aviation | 40 |
+| control | 35 |
+
+### Frequency Chart
+
+![Most frequent words in the Airport page](images/airport-frequency.png)
+
+### Word Cloud
+
+![Airport page word cloud](images/airport-word-cloud.png)
 
 ## Interpretation
 
-Web text contains both useful information and noise
-introduced by document structure and formatting.
+Airport, airports, and aircraft dominate the results.
+Together with aviation and control, these terms reflect the
+page's focus on aviation facilities and operations.
 
-Simple text cleaning and frequency analysis
-provide an initial view of a document's vocabulary.
+However, edit, archived, original, and retrieved also appear
+in the top 10. This shows that frequently occurring words can
+come from page controls and references as well as the main text.
 
-These techniques establish a foundation
-for later work involving text preprocessing,
-corpus exploration, and natural language processing.
+The results describe vocabulary in this single page.
+They do not measure actual airport activity or passenger demand.
 
-## Documentation Index
+## Verification
 
-- **Home** - this landing page
-- [**Project Instructions**](project-instructions.md)
-- [**Glossary**](glossary.md)
+I ran `uv run python -m nlp.airport_words`.
 
-## Project Links
+The script displayed both visualizations and finished with
+"Pipeline executed successfully!"
 
-- [GitHub Repository](https://github.com/denisecase/nlp-01-getting-started)
-- [Example Script](https://github.com/denisecase/nlp-01-getting-started/blob/main/src/nlp/web_words.py)
-- [Example Notebook](https://github.com/denisecase/nlp-01-getting-started/blob/main/notebooks/web_words.ipynb)
+## Limitations
 
-## Project Resources
+The analysis uses one page that may change over time.
+It includes navigation and reference text, and the small
+stop-word list does not remove all irrelevant words.
 
-- [Project Instructions](project-instructions.md)
+Airport and airports are counted separately. The analysis
+does not combine word forms or examine meaning and context.
+
+## Next Steps
+
+I would extract only the main article text and remove reference
+and navigation elements. I would also compare several articles,
+combine related word forms, and investigate phrases such as
+air traffic control.
+
+## Attribution and Links
+
+Adapted from [Denise Case's original example](https://github.com/denisecase/nlp-01-getting-started).
+
+- [My repository](https://github.com/Aboudlal/nlp-01-getting-started-custom)
+- [Data source](https://en.wikipedia.org/wiki/Airport)
 - [Professional Python Guide](https://denisecase.github.io/pro-analytics-02/)
-- [Professional Python Project Explainer](https://pup-pack.github.io/professional-python-project-explainer/)

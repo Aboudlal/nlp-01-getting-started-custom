@@ -300,3 +300,34 @@ without changing the counts of the retained words.
 However, e.g and edit remained in the results. A short stop-word list
 does not remove all irrelevant text, and word frequency alone does
 not explain the meaning or context of a word.
+## D3 — Airport Web Text Analysis
+
+My custom application explores the most frequent words in
+Wikipedia's Airport page.
+
+### Set Up and Run
+
+From a terminal in the project root:
+
+    uv sync
+    uv run python -m nlp.airport_words
+
+Close each figure window to allow the script to continue.
+
+The script saves these images:
+
+- `docs/images/airport-frequency.png`
+- `docs/images/airport-word-cloud.png`
+
+### Main Result
+
+Airport (245), airports (124), and aircraft (80) were the most
+frequent tokens in the observed run. Reference and editing
+terms also appeared, showing a limitation of extracting
+text from the whole page.
+
+![Airport word frequencies](docs/images/airport-frequency.png)
+
+[Read the full report](https://aboudlal.github.io/nlp-01-getting-started-custom/)
+
+[Data source](https://en.wikipedia.org/wiki/Airport)
