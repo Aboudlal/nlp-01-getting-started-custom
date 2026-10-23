@@ -191,7 +191,7 @@ In the VS Code terminal,
 paste each command and hit Enter or Return after to run it.
 
 ```shell
-uv run prek install --force
+uvx prek install --force
 uv run prek update --freeze --cooldown-days 7
 
 git add -A
