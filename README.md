@@ -6,12 +6,19 @@
 Author: Abdellah Boudlal
 Date: 2026-10
 
-This project explores a professional Python workflow for web text analysis.
-It retrieves text from a web page, calculates word frequencies, and creates
-a bar chart and a word cloud.
+This project analyzes vocabulary from Wikipedia's Airport page.
+It retrieves web text, applies basic cleaning and common-word filtering,
+and creates a frequency chart and a word cloud.
 
-Based on the example project by Denise Case:
-https://github.com/denisecase/nlp-01-getting-started
+The analysis also shows how navigation and reference text can affect
+word-frequency results.
+
+Run the custom application from the project root:
+
+    uv sync
+    uv run python -m nlp.airport_words
+
+[View the full report](https://aboudlal.github.io/nlp-01-getting-started-custom/)
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
 [![CI](https://github.com/Aboudlal/nlp-01-getting-started-custom/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/Aboudlal/nlp-01-getting-started-custom/actions/workflows/ci-python-zensical.yml)
@@ -136,7 +143,7 @@ uv run python -m pytest
 
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/nlp-01-getting-started/)
+The [hosted documentation site](https://aboudlal.github.io/nlp-01-getting-started-custom/)
 is published using Zensical and GitHub Pages.
 
 The documentation site is used to present the project report,
