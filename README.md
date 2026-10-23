@@ -236,7 +236,30 @@ testing, documentation, and code quality.
 
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/nlp-01-getting-started/)
+- [Hosted Documentation](https://aboudlal.github.io/nlp-01-getting-started-custom/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
+
+## D1 — Original Project Baseline
+
+Author: Abdellah Boudlal
+
+Date: 2026-10
+
+I ran the original analysis using:
+
+`uv run python -m nlp.web_words`
+
+The script retrieved the Wikipedia article on Natural Language Processing,
+extracted and cleaned the text, and counted word frequencies using Polars.
+It displayed a frequency bar chart and a word cloud.
+
+The run retained 5,510 tokens after cleaning. The most frequent terms
+included language (111), natural (69), processing (54), and text (52).
+
+Common words such as from, that, with, and this also appeared among
+the most frequent terms. This suggests that additional filtering could
+make topic-related vocabulary easier to identify.
+
+The script finished with "Pipeline executed successfully!"
